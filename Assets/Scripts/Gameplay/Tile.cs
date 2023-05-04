@@ -48,11 +48,12 @@ namespace Gameplay
                     _crossGO.transform.DOScale(_crossGO.transform.localScale / 1.2f, .2f).OnComplete((() =>
                     {
                         _crossGO.DeSpawn();
+                        IsEmpty = true;
                     }));
                 }));
             }
             
-            IsEmpty = true;
+            
         }
         
         public void DeSpawn()
