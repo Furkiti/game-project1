@@ -76,6 +76,7 @@ namespace Managers
         private void RegenerateButtonClicked()
         {
             int newboardSize = int.Parse(boardSizeInputField.text);
+            newboardSize = Mathf.Clamp(newboardSize, 1, 20);
             EventManager.onRegenerateButtonClicked?.Invoke(newboardSize);
         }
     }
