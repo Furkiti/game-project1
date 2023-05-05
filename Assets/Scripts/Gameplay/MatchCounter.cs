@@ -1,3 +1,4 @@
+using System;
 using Managers;
 using TMPro;
 using UnityEngine;
@@ -8,19 +9,23 @@ namespace Gameplay
     {
         private int _currentMatchCounter; 
         [SerializeField]private TextMeshProUGUI matchCountTMP;
+
+        private void Awake()
+        {
+            BoardCreated();
+        }
+
         private void OnEnable()
         {
-            EventManager.onBoardCreated += BoardCreated;
             EventManager.onMatchFound += MatchFound;
         }
         
         private void OnDisable()
         {
-            EventManager.onBoardCreated -= BoardCreated;
             EventManager.onMatchFound -= MatchFound;
         }
         
-        private void BoardCreated(int newBoardSize)
+        private void BoardCreated()
         {
             _currentMatchCounter = 0;
             SetMatchCounterTMP();
