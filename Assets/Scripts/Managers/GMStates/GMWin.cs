@@ -13,7 +13,7 @@ namespace Managers.GMStates
         public override void Enter()
         {
             base.Enter();
-            EventManager.onGameCompleted?.Invoke();
+            EventManager.OnGameCompleted?.Invoke();
         }
     }
 }

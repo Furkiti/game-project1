@@ -14,7 +14,7 @@ namespace Managers.GMStates
         {
             base.Enter();
         
-            EventManager.onGameFailed?.Invoke();
+            EventManager.OnGameFailed?.Invoke();
         }
     }
 }

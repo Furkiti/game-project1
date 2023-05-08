@@ -10,18 +10,18 @@ namespace Managers
     {
         [Header("Dependencies")] 
         [Header("Game Events")] 
-        public static Action onGameLoaded;
-        public static Action onGameStarted;
-        public static Action onGameCompleted;
-        public static Action onGameFailed;
-        public static Action onGameReset;
+        public static Action OnGameLoaded;
+        public static Action OnGameStarted;
+        public static Action OnGameCompleted;
+        public static Action OnGameFailed;
+        public static Action OnGameReset;
    
         [HorizontalLine()]
         [Header("Input Events")] 
-        public static Action<IClickable> onTileClicked;
-        public static Action onMatchFound;
-        public static Action<int> onBoardCreated;
-        public static Action<int> onRegenerateButtonClicked;
+        public static Action<IClickable> OnTileClicked;
+        public static Action OnMatchFound;
+        public static Action<int> OnBoardCreated;
+        public static Action<int> OnRegenerateButtonClicked;
         
 
     }

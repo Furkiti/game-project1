@@ -15,7 +15,7 @@ namespace Managers.GMStates
         {
             base.Enter();
             
-            EventManager.onGameReset?.Invoke();
+            EventManager.OnGameReset?.Invoke();
             
         }
 

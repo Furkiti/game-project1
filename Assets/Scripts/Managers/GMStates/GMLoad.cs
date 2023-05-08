@@ -15,7 +15,7 @@ namespace Managers.GMStates
         {
             base.Enter();
         
-            EventManager.onGameLoaded?.Invoke();
+            EventManager.OnGameLoaded?.Invoke();
             GameManager.Instance.ChangeState(GameManager.Instance.gmStartState);
         }
 

@@ -17,12 +17,12 @@ namespace Gameplay
 
         private void OnEnable()
         {
-            EventManager.onMatchFound += MatchFound;
+            EventManager.OnMatchFound += MatchFound;
         }
         
         private void OnDisable()
         {
-            EventManager.onMatchFound -= MatchFound;
+            EventManager.OnMatchFound -= MatchFound;
         }
         
         private void BoardCreated()

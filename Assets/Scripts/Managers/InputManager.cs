@@ -15,13 +15,13 @@ namespace Managers
         
         private void OnEnable()
         {
-            EventManager.onBoardCreated += BoardCreated;
+            EventManager.OnBoardCreated += BoardCreated;
             regenerateBoardButton.onClick.AddListener(RegenerateButtonClicked);
         }
         
         private void OnDisable()
         {
-            EventManager.onBoardCreated -= BoardCreated;
+            EventManager.OnBoardCreated -= BoardCreated;
             regenerateBoardButton.onClick.RemoveListener(RegenerateButtonClicked);
         }
         
@@ -58,7 +58,7 @@ namespace Managers
                     // if the hit object is clickable
                     if (clickable != null)
                     {
-                        EventManager.onTileClicked?.Invoke(clickable);
+                        EventManager.OnTileClicked?.Invoke(clickable);
                         clickable.OnClick();
                     }
                 }
@@ -77,7 +77,7 @@ namespace Managers
         {
             int newboardSize = int.Parse(boardSizeInputField.text);
             newboardSize = Mathf.Clamp(newboardSize, 1, 20);
-            EventManager.onRegenerateButtonClicked?.Invoke(newboardSize);
+            EventManager.OnRegenerateButtonClicked?.Invoke(newboardSize);
         }
     }
 }

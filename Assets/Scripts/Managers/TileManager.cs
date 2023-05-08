@@ -19,14 +19,14 @@ namespace Managers
         
         private void OnEnable()
         {
-            EventManager.onGameStarted += CreateTiles;
-            EventManager.onRegenerateButtonClicked += RegenerateTiles;
+            EventManager.OnGameStarted += CreateTiles;
+            EventManager.OnRegenerateButtonClicked += RegenerateTiles;
         }
         
         private void OnDisable()
         {
-            EventManager.onGameStarted -= CreateTiles;
-            EventManager.onRegenerateButtonClicked -= RegenerateTiles;
+            EventManager.OnGameStarted -= CreateTiles;
+            EventManager.OnRegenerateButtonClicked -= RegenerateTiles;
         }
         
         private void CreateTiles()
@@ -69,7 +69,7 @@ namespace Managers
 
             _boardSize = newBoardSize;
             
-            EventManager.onBoardCreated?.Invoke(newBoardSize);
+            EventManager.OnBoardCreated?.Invoke(newBoardSize);
         }
         
         private void RegenerateTiles(int newBoardSize)
@@ -126,7 +126,7 @@ namespace Managers
             
                     if (matches.Count >= 3)
                     {
-                        EventManager.onMatchFound?.Invoke();
+                        EventManager.OnMatchFound?.Invoke();
                         RemoveMatches(matches);
                         return;
                     }
